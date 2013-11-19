@@ -1,0 +1,17 @@
+-#  This file is app/views/companies/index.html.haml
+%h2 All Companies
+
+%table#companies
+  %thead
+    %tr
+      %th Company Name
+      %th Price Range
+      %th Coverage Area
+      %th More Info
+  %tbody
+    - @companies.each do |company|
+      %tr
+        %td= company.name 
+        %td= company.price_range
+        %td= company.coverage_area
+        %td= link_to "More about #{company.name}", company_path(company)
